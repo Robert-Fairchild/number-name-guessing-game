@@ -12,7 +12,7 @@ class V1::GamesController < ApplicationController
   end 
     
   def number_params_method
-    number = params["num"].to_i
+    number = params[:input_value].to_i
     if number < 45 
       render json: {message: "guess higher home skillet"}
     elsif number > 45 
@@ -21,8 +21,4 @@ class V1::GamesController < ApplicationController
       render json: {message: "You win bro!"}
     end 
   end 
-
-
-
-  
 end
